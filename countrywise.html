@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <header class="header">
+        <ul>
+          <!-- <li class="logo">Make a logo</li> -->
+          <li>
+            <a href="index.html">Overview</a>
+          </li>
+          <li>
+            <a href="countrywise.html">Countrywise Data</a>
+          </li>
+          <!-- <li>Datewise Data</li>
+          <li>Graphical Data</li>
+
+          <li>Confirmed Cases</li>
+          <li>Recovered Cases</li>
+          <li>Death Cases</li>
+          <li>Today Data</li> -->
+        </ul>
+      </header>
+      <h2 class="heading text-center">Country Wise Data</h2>
+
+      <div class="error">
+        <span class="error-close">x</span>
+        <p class="error-message">Data Not Found</p>
+      </div>
+
+      <div class="choose-country">
+        <h4>Please select a country</h4>
+        <select name="country" id="country">
+          <option value="select_country" selected>Select Country</option>
+        </select>
+      </div>
+
+      <div class="display-data">
+        <h3>Confirmed Cases</h3>
+        <div id="confirmedCases"></div>
+
+        <h3>Recovered Cases</h3>
+        <div id="recoveredCases"></div>
+
+        <h3>Death Cases</h3>
+        <div id="deathCases"></div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetchApiData();
+
+        function fetchApiData() {
+          if (localStorage.getItem("countryData") !== null) {
+            response = JSON.parse(localStorage.getItem("countryData"));
+          } else {
+            fetch(fetchCountryUrl)
+              .then(response => {
+                if (!response.ok) {
+                  throw Error(response.statusText);
+                } else {
+                  response.json();
+                }
+              })
+              .then(data => {
+                response = data;
+                localStorage.setItem("countryData", JSON.stringify(response));
+              })
+              .catch(err => setError(err));
+          }
+          setData();
+        }
+
+        function setData() {
+          if (response !== null) {
+            console.log(response["countries"]);
+            var countriesData = Object.keys(response["countries"]);
+            var html = '<option value="" selected>Select Country</option>';
+            countriesData.forEach(country => {
+              html += `<option value="${country}">${country}</option>`;
+            });
+            countrySelect.innerHTML = html;
+          }
+        }
+
+        countrySelect.addEventListener("change", function() {
+          if (this.value !== "") {
+            console.log(this.value);
+            fetchContryWiseData(this.value);
+          }
+        });
+
+        function fetchContryWiseData(country) {
+          fetch("https://covid19.mathdro.id/api/countries/" + country)
+            .then(data => {
+              if (!data.ok) {
+                throw Error(data["error"]);
+              } else {
+                return data.json();
+              }
+            })
+            .then(response => setFigures(response))
+            .catch(error => setError(error));
+        }
+
+        function setFigures(fetchedData) {
+          console.log(fetchedData);
+          var confirmedNumber = fetchedData["confirmed"]["value"];
+          var recoveredNumber = fetchedData["recovered"]["value"];
+          var deathNumber = fetchedData["deaths"]["value"];
+
+          confirmed.textContent = confirmedNumber;
+          recovered.textContent = recoveredNumber;
+          deaths.textContent = deathNumber;
+          showElement(".display-data");
+          hideElement(".error");
+        }
+
+        function setError(error) {
+          if (error !== null) {
+            errorMessage.textContent = "No Data Available";
+            showElement(".error");
+            hideElement(".display-data");
+          }
+        }
+
+        function showElement(element) {
+          document.querySelector(element).style.display = "block";
+        }
+
+        function hideElement(element) {
+          document.querySelector(element).style.display = "none";
+        }
+
+        errorClose.addEventListener("click", function() {
+          hideElement(".error");
+        });
+      });
+    </script>
+  </body>
+</html>
