@@ -59,27 +59,23 @@
         fetchApiData();
 
         function fetchApiData() {
-          if (localStorage.getItem("countryData") !== null) {
-            response = JSON.parse(localStorage.getItem("countryData"));
-          } else {
-            fetch(fetchCountryUrl)
-              .then(response => {
-                if (!response.ok) {
-                  throw Error(response.statusText);
-                } else {
-                  response.json();
-                }
-              })
-              .then(data => {
-                response = data;
-                localStorage.setItem("countryData", JSON.stringify(response));
-              })
-              .catch(err => setError(err));
-          }
-          setData();
+          fetch(fetchCountryUrl)
+            .then(response => {
+              if (!response.ok) {
+                throw Error(response.statusText);
+              } else {
+                return response.json();
+              }
+            })
+            .then(data => {
+              response = data;
+              setData();
+            })
+            .catch(err => setError(err));
         }
 
         function setData() {
+          console.log(response);
           if (response !== null) {
             console.log(response["countries"]);
             var countriesData = Object.keys(response["countries"]);

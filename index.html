@@ -41,18 +41,13 @@
       });
 
       function fetchApiData() {
-        if (localStorage.getItem("covidData") !== null) {
-          response = JSON.parse(localStorage.getItem("covidData"));
-        } else {
-          fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-              response = data;
-              localStorage.setItem("covidData", JSON.stringify(response));
-            })
-            .catch(err => console.log(err));
-        }
-        setData();
+        fetch(apiUrl)
+          .then(response => response.json())
+          .then(data => {
+            response = data;
+            setData();
+          })
+          .catch(err => console.log(err));
       }
 
       function setData() {
@@ -71,6 +66,7 @@
       }
 
       function setImage() {
+        console.log(response);
         affectedImage.src = response["image"];
       }
 
