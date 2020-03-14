@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid-19 App By Ankit Sharma</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        iframe{
+            margin: 4rem auto;
+        }
+        
+        .chart #footer, .chart .dw-chart-footer{
+            display: none;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <header class="header">
+        <ul>
+          <li>
+            <a href="index.html">Overview</a>
+          </li>
+          <li>
+            <a href="countrywise.html">Countrywise Data</a>
+          </li>
+          <li>
+            <a href="datewise.html">DateWise Data</a>
+          </li>
+          <li>
+            <a href="datavisualization.html">Date Visualizations</a>
+          </li>
+        </ul>
+      </header>
+      <h2 class="heading text-center">Covid-19 Data Visualizations</h2>
+
+
+<div id="visualization-container">
+      <iframe title="Coronavirus COVID-19 Confirmed, Deaths, Recovered" aria-label="Table" id="datawrapper-chart-KzMi4" src="//datawrapper.dwcdn.net/KzMi4/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="215"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
+      </script>
+
+<iframe title="Coronavirus COVID-19 cases in selected countries" aria-label="Table" id="datawrapper-chart-84QD2" src="//datawrapper.dwcdn.net/84QD2/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="667"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
+</script>
+
+<iframe title="Coronavirus COVID-19: confirmed cases worldwide" aria-label="Interactive line chart" id="datawrapper-chart-d4I0R" src="//datawrapper.dwcdn.net/d4I0R/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="566"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
+</script>
+
+<iframe title="Coronavirus COVID-19: confirmed cases worldwide" aria-label="Interactive area chart" id="datawrapper-chart-4f02h" src="//datawrapper.dwcdn.net/4f02h/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="578"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
+</script>
+
+<iframe title="Coronavirus COVID-19 confirmed &amp;amp; recovered cases" aria-label="World Symbol map" id="datawrapper-chart-rYNHX" src="//datawrapper.dwcdn.net/rYNHX/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="525"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
+</script>
+</div>
+
+<script src="script.js"></script>
+
+<script defer>
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 80) {
+        header.classList.add("fixed");
+      } else {
+        header.classList.remove("fixed");
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded',function(){
+        var links = document.querySelectorAll('#visualization-container iframe a');
+        console.log(links);
+
+        links.forEach(el => {
+          el.addEventListener('click',function(e){
+            e.preventDefault();
+          })
+        })
+    })
+</script>
+
+    </div>
+  </body>
+</html>

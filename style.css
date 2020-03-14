@@ -63,6 +63,7 @@ header.fixed {
 .heading {
   font-size: 2.5rem;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 header.header > ul > li {
@@ -77,6 +78,8 @@ header.header > ul > li > a {
 
 #affectedImg {
   max-width: 100%;
+  width: 100%;
+  margin-bottom: 4rem;
 }
 
 #confirmedCases,
@@ -99,6 +102,14 @@ header.header > ul > li > a {
 }
 
 /* CountryWise Css */
+.case_title{
+  font-size: 1.4rem;
+}
+
+.choose-country h4{
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}
 
 .error {
   display: none;
@@ -141,5 +152,11 @@ header.header > ul > li > a {
 @media (max-width: 600px) {
   header.header > ul {
     flex-direction: column;
+  }
+
+  .main-container {
+    padding: 0;
+    margin: auto;
+    text-align: center;
   }
 }
