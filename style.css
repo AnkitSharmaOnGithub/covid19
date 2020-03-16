@@ -30,7 +30,6 @@ body {
 }
 
 header.header {
-  /* max-width: 1200px; */
   margin: auto;
 
   position: relative;
@@ -39,6 +38,13 @@ header.header {
   transform: translateX(-50%);
   z-index: 2;
   transition: all 0.5s;
+  background-color: #008db9;
+  color : #fff;
+
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  top: 0;
 }
 
 header.header > ul {
@@ -49,15 +55,7 @@ header.header > ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  color: #fff;
-  background-color: #008db9;
-}
-
-header.fixed {
-  position: fixed;
-  width: 100%;
-  top: 0;
+  display: none;
 }
 
 .heading {
