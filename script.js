@@ -15,9 +15,22 @@ const errorClose = document.querySelector('.error-close');
 const errorDiv = document.querySelector('.error');
 const errorMessage = document.querySelector('.error-message');
 
-// document.addEventListener('DOMContentLoaded',function(){
-//     var toggler = document.querySelector('.toggler');
-//     toggler.addEventListener('click',function(){
-//         document.querySelector('header.header ul').style.display = 'block';
-//     })
-// })
+var toggler = document.querySelector('.toggler');
+var close = document.querySelector('.close');
+
+document.addEventListener('DOMContentLoaded',function(){
+    
+    toggler.addEventListener('click',function(){
+        document.querySelector('header.header ul').style.display = 'block';
+        toggler.style.visibility = 'hidden';
+        close.style.visibility = 'visible';
+    });
+});
+
+document.addEventListener('DOMContentLoaded',function(){
+    close.addEventListener('click',function(){
+        document.querySelector('header.header ul').style.display = 'none';
+        toggler.style.visibility = 'visible';
+        close.style.visibility = 'hidden';
+    });
+});
