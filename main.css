@@ -1,0 +1,226 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.med {
+	font-weight: 500;
+}
+
+.center {
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+nav {
+	padding: 1em 0;
+	border-bottom: solid 2px rgb(204, 204, 204);
+	margin-bottom: 3em;
+}
+
+header ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0;
+}
+
+header ul li {
+	list-style-type: none;
+	text-align: center;
+}
+
+.right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.right li {
+	/* margin-left: 1.2em; */
+	font-size: 1.12em;
+}
+
+.right a {
+	color: #222;
+	text-decoration: none;
+	padding: 0.5em 0.75em;
+	/* background-color: blue; */
+	border-radius: 0.2em;
+	transition: 0.3s;
+}
+
+.right a:hover {
+	background-color: rgba(156, 163, 199, 0.185);
+}
+
+header .title {
+	font-size: 1.7em;
+}
+
+.grid {
+	display: grid;
+	grid-gap: 3em;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+	border: solid 2px rgb(219, 219, 219);
+	padding: 1em;
+	border-radius: 0.5em;
+}
+
+#confirmedCases {
+	color: #c5ab41;
+}
+
+#recoveredCases {
+	color: #4ac550;
+}
+
+#deathCases {
+	color: #ff6961;
+}
+
+.red {
+	color: #ff6961;
+}
+
+.error {
+	display: none;
+	background-color: #ff392e;
+	color: #fff;
+	justify-content: space-between;
+	align-items: center;
+	padding: 3em 2em 1em 2em;
+	margin: 2em 0;
+	width: 50%;
+}
+
+.error p {
+	margin: 0;
+	font-size: 1.5em;
+}
+
+.error-close {
+	cursor: pointer;
+}
+
+.error-close {
+	position: relative;
+	top: -3em;
+	/* right: 2em; */
+	/* width: 20px; */
+	/* height: 20px; */
+	text-align: right;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.choose-country h5 {
+	margin-bottom: 0.5em;
+}
+
+.choose-country {
+	margin-bottom: 1em;
+}
+
+.display-data {
+	display: none;
+}
+
+/* Footer trick */
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+/* Trick */
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+footer {
+	margin-top: auto;
+	padding: 1em 0;
+	border-top: solid 1px rgb(204, 204, 204);
+	background-color: rgba(224, 224, 224, 0.404);
+}
+
+::-moz-selection {
+	color: #12477c;
+	background: rgba(80, 142, 235, 0.281);
+}
+
+::selection {
+	color: #2167ac;
+	background: rgba(80, 142, 235, 0.281);
+}
+
+.toggler div {
+	width: 25px;
+	height: 2px;
+	background-color: black;
+	display: none;
+}
+
+.toggler div:not(:last-child) {
+	margin-bottom: 0.5em;
+}
+
+.close {
+	display: none;
+	font-size: 2em;
+}
+
+.respul {
+	display: none;
+}
+nav {
+	margin-top: 1em;
+}
+
+.toggler, .close {
+	margin-top: -1em;
+}
+
+.respul li {
+	list-style-type: none;
+	text-align: center;
+}
+
+.respul a {
+	color: #69e;
+	text-decoration: none;
+}
+
+@media (max-width: 750px) {
+	.grid {
+		display: grid;
+		grid-gap: 3em;
+		grid-template-columns: repeat(1, 1fr);
+	}
+	header .right {
+		display: none;
+	}
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+	.toggler div {
+		display: block;
+	}
+}
