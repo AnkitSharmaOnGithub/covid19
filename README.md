@@ -17,13 +17,13 @@ This app gives you all updates needed related to COVID-19 cases. It includes fea
 
 ## Screenshots:-
 
-![Data Visualization](img/data_visualization_1.PNG?raw=true "Title")
+![Data Visualization](img/data_visualization_1.PNG?raw=true "Country-wise data visualization")
 
 
-![Data Visualization](img/data_visualization_2.PNG?raw=true "Title")
+![Data Visualization](img/data_visualization_2.PNG?raw=true "Bar-chart")
 
 
-![Data Visualization](img/data_visualization_3.PNG?raw=true "Title")
+![Data Visualization](img/data_visualization_3.PNG?raw=true "Bar-chart")
 
 
-![Data Visualization](img/data_visualization_4.PNG?raw=true "Title")
+![Data Visualization](img/data_visualization_4.PNG?raw=true "Cases Hotspots Map")
