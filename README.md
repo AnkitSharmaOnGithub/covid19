@@ -1,5 +1,6 @@
 # COVID 19 Web App.
-## If you need any help. Feel free to raise an issue. I would help you with any issues that you have in solving the issues. But, i have one little request. It may take a whilte to reply to you due to my limited time. So, Kindly be patient. Thanks.
+
+### I would be happy to provide you any help that you would need. If you need any help. Feel free to comment on the respective issue. Also, i have one little request. It may take a while to reply to you due to my limited availability. So, Kindly be patient. Thanks.
 
 A web app showing data related COVID-19 virus.
 
