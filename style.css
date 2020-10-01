@@ -118,10 +118,42 @@ header.header > ul > li > a {
   margin-bottom: 4rem;
 }
 
-#confirmedCases,
-#recoveredCases,
-#deathCases {
-  font-size: 1.2rem;
+.container-cases {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-cases {
+  padding: 20px;
+  width: 30%;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.card-cases h3 {
+  text-align: left;
+}
+
+.card-cases div {
+  padding: 20px 0; 
+  text-align: center;
+}
+
+.card-cases.confirmed {
+  border: 2px solid #ffa500;
+}
+
+.card-cases.recovered {
+  border: 2px solid #008000;
+}
+
+.card-cases.death {
+  border: 2px solid #ff0000;
+}
+
+.txtCases {
+  font-size: 48px;
   font-weight: 700;
 }
 
@@ -183,6 +215,23 @@ header.header > ul > li > a {
   header.header > ul {
     width: 100%;
   }
+
+  .txtCases {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-cases {
+    display: block;
+    width: 100%;
+  }
+
+  .card-cases {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+ 
 }
 
 @media (max-width: 600px) {
@@ -192,7 +241,7 @@ header.header > ul > li > a {
 
   .main-container {
     padding: 0;
-    margin: auto;
+    margin: auto 20px;
     margin-top: 5rem;
     text-align: center;
   }
