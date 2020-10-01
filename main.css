@@ -190,7 +190,10 @@ footer {
 
 .respul {
 	display: none;
+	margin: 0;
+	margin-top: 0.8em;
 }
+
 nav {
 	margin-top: 1em;
 }
@@ -228,4 +231,12 @@ nav {
 	.toggler div {
 		display: block;
 	}
+}
+
+#displayData {
+	margin-bottom: 1em;
+}
+
+.container.datewise {
+	margin-bottom: 4em;
 }
