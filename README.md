@@ -13,4 +13,4 @@ Link :- https://ankitsharmaongithub.github.io/covid19/
 
 ![Alt text](relative/path/to/img.jpg?raw=true "Title")
 
-![Alt text](../img/data_visualization_1.PNG?raw=true "Title")
+![Alt text](img/data_visualization_1.PNG?raw=true "Title")
