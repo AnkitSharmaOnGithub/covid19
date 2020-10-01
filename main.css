@@ -21,6 +21,10 @@ nav {
 	margin-bottom: 3em;
 }
 
+header {
+	margin-top: 1em;
+}
+
 header ul {
 	display: flex;
 	justify-content: space-between;
@@ -219,6 +223,7 @@ nav {
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
+		margin-top: 0;
 	}
 	.toggler div {
 		display: block;
