@@ -1,4 +1,94 @@
 <!DOCTYPE html><html lang="en"><head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160780833-1"></script>
 <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date()); gtag('config', 'UA-160780833-1');</script> <meta charset="UTF-8"/> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>Covid-19 App By Ankit Sharma</title> <link rel="stylesheet" href="style.css"/></head><body> <div class="main-container"> <header class="header"> <div class="toggler"> <span></span> <span></span> <span></span> </div><div class="close"> <svg class="navbar--svg_close" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve" style="display: block;"> <line fill="none" x1="5.4" y1="15.6" x2="5.4" y2="15.6"></line> <line fill="none" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" x1="0.5" y1="0.6" x2="19.4" y2="19.4"></line> <line fill="none" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" x1="19.4" y1="0.6" x2="0.6" y2="19.4"></line> </svg> </div><ul> <li> <a href="index.html">Overview</a> </li><li> <a href="countrywise.html">Countrywise Data</a> </li><li> <a href="datewise.html">DateWise Data</a> </li><li> <a href="datavisualization.html">Date Visualizations</a> </li></ul> </header> <h2 class="heading text-center">Covid-19 Worldwide Data</h2> <img id="affectedImg" src="" alt=""/> <h3>Confirmed Cases</h3> <div id="confirmedCases"></div><h3>Recovered Cases</h3> <div id="recoveredCases"></div><h3>Death Cases</h3> <div id="deathCases"></div></div><script src="script-min.js"></script> <script>document.addEventListener("DOMContentLoaded", ()=>{fetchApiData();}); function fetchApiData(){fetch(apiUrl) .then(response=> response.json()) .then(data=>{response=data; setData();}) .catch(err=> console.log(err));}function setData(){setImage(); setCases();}function setCases(){var confirmedNumber=response["confirmed"]["value"]; var recoveredNumber=response["recovered"]["value"]; var deathNumber=response["deaths"]["value"]; confirmed.textContent=confirmedNumber; recovered.textContent=recoveredNumber; deaths.textContent=deathNumber;}function setImage(){console.log(response); affectedImage.src=response["image"];}</script></body></html>
+  gtag('js', new Date()); gtag('config', 'UA-160780833-1');</script> <meta charset="UTF-8"/> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title >Covid-19 App By Ankit Sharma</title> <link rel="stylesheet" href="style.css"/>
+</head>
+<body> 
+
+  
+  <style>
+    body {
+      /* background-image: url('pixabay_free.jpg'); */
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    </style>
+
+             <nav class="navbar navbar-expand-lg navbar-light bg-info ">
+              <a class="navbar-brand" href="#"  style="color:white;   font-family: Arial, Helvetica, sans-serif; font-size: 23px;"><b>Covid-19</b></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-rg" id="button">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="" style="color:white; font-family: Arial, Helvetica, sans-serif;  font-size: 16px;margin-right: 10px;  "><b>Overview</b></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="countrywise.html" style="color:white;font-family: Arial, Helvetica, sans-serif; font-size: 16px;margin-right: 10px;"> <b>Countrywise Data</b></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="datawise.html" style="color:white; font-family: Arial, Helvetica, sans-serif; font-size: 16px;margin-right: 10px;"><b> DateWise Data</b></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="datavisualization.html" style="color:white; font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin-right: 10px;"><b>Data Visualization</b></a>
+                  </li>
+                  
+                </ul>
+              
+              </div>
+            </nav>
+<br><br><hr>
+
+
+              <h2 class="heading text-center" style="font-size: 80px; color: gainsboro; background-color: brown;">Covid-19 Worldwide Data</h2> 
+              <br><hr><br>
+              <div class="row">
+                <div class="col-sm-4" style="width: 15rem;">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title" style="background-color: yellow; text-align: center;" >Confirmed Cases</h5>
+                     <hr>
+                      <br>
+                     
+                      <div id="confirmedCases" style="text-align: center;"></div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4" style="width: 15rem;">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title" style="background-color:green; text-align: center;" >Recovered Cases</h5>
+                      <hr>
+                      <br>
+                      <div id="recoveredCases" style="text-align: center;"></div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4" style="width: 15rem;">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title" style="background-color: red; text-align: center;" >Death Cases</h5>
+                      <hr>
+                      
+                      <br>
+
+                      <div id="deathCases" style="text-align: center;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <img id="affectedImg" src="" alt=""/>
+             <br>
+             
+           
+                <script src="script-min.js"></script>
+                 <script>document.addEventListener("DOMContentLoaded", ()=>{fetchApiData();}); function fetchApiData(){fetch(apiUrl) .then(response=> response.json()) .then(data=>{response=data; setData();}) .catch(err=> console.log(err));}function setData(){setImage(); setCases();}function setCases(){var confirmedNumber=response["confirmed"]["value"]; var recoveredNumber=response["recovered"]["value"]; var deathNumber=response["deaths"]["value"]; confirmed.textContent=confirmedNumber; recovered.textContent=recoveredNumber; deaths.textContent=deathNumber;}function setImage(){console.log(response); affectedImage.src=response["image"];}</script></body></html>
