@@ -1,7 +1,14 @@
-# COVID 19 Web App.
+# COVID 19 Web App
 
 ## Kindly use this repo as an oppotunity to learn and improve your skills while contribution to Open Source.
 
+## How to start :- 
+
+1) Fork and start this repository. Click on watch to get notified about updates on this repo.
+2) Go to issues and check if you can resolve any of the already exisisting issue.
+3) If you find some issue, then create a new issue using the Issues tab.
+4) Make necessay changes in your forked repo.
+5) Create a Pull Request.
 
 A web app showing data related COVID-19 virus.
 
