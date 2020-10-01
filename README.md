@@ -11,4 +11,9 @@ Hello Hacktoberfest participants. I am opening this repository as a playground f
 ##### I would be happy to provide you any help that you would need. If you need any help. Feel free to comment on the respective issue. Also, i have one little request. It may take a while to reply to you due to my limited availability. So, Kindly be patient. Thanks.
 Link :- https://ankitsharmaongithub.github.io/covid19/
 
-![Alt text](img/data_visualization_1.PNG?raw=true "Title")
+## Screenshots:-
+
+![Data Visualization](img/data_visualization_1.PNG?raw=true "Title")
+![Data Visualization](img/data_visualization_2.PNG?raw=true "Title")
+![Data Visualization](img/data_visualization_3.PNG?raw=true "Title")
+![Data Visualization](img/data_visualization_4.PNG?raw=true "Title")
