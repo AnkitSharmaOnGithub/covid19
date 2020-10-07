@@ -1,4 +1,191 @@
 <!DOCTYPE html><html lang="en"><head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160780833-1"></script>
-<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date()); gtag('config', 'UA-160780833-1');</script> <meta charset="UTF-8"/> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>Covid-19 App By Ankit Sharma</title> <link rel="stylesheet" href="style.css"/></head><body> <div class="main-container"> <header class="header"> <div class="toggler"> <span></span> <span></span> <span></span> </div><div class="close"> <svg class="navbar--svg_close" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve" style="display: block;"> <line fill="none" x1="5.4" y1="15.6" x2="5.4" y2="15.6"></line> <line fill="none" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" x1="0.5" y1="0.6" x2="19.4" y2="19.4"></line> <line fill="none" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" x1="19.4" y1="0.6" x2="0.6" y2="19.4"></line> </svg> </div><ul> <li> <a href="index.html">Overview</a> </li><li> <a href="countrywise.html">Countrywise Data</a> </li><li> <a href="datewise.html">DateWise Data</a> </li><li> <a href="datavisualization.html">Data Visualizations</a> </li></ul> </header> <h2 class="heading text-center">Covid-19 Worldwide Data</h2> <img id="affectedImg" src="" alt=""/> <h3>Confirmed Cases</h3> <div id="confirmedCases"></div><h3>Recovered Cases</h3> <div id="recoveredCases"></div><h3>Death Cases</h3> <div id="deathCases"></div></div><script src="script-min.js"></script> <script>document.addEventListener("DOMContentLoaded", ()=>{fetchApiData();}); function fetchApiData(){fetch(apiUrl) .then(response=> response.json()) .then(data=>{response=data; setData();}) .catch(err=> console.log(err));}function setData(){setImage(); setCases();}function setCases(){var confirmedNumber=response["confirmed"]["value"]; var recoveredNumber=response["recovered"]["value"]; var deathNumber=response["deaths"]["value"]; confirmed.textContent=confirmedNumber; recovered.textContent=recoveredNumber; deaths.textContent=deathNumber;}function setImage(){console.log(response); affectedImage.src=response["image"];}</script></body></html>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160780833-1">
+	
+</script>
+<script>
+ window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date()); gtag('config', 'UA-160780833-1');
+</script>
+ <meta charset="UTF-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Covid-19 App By Ankit Sharma</title> 
+   <link rel="stylesheet" href="style.css"/>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body> 
+
+	<style type="text/css">
+		body{
+  background-image: url("Free_copyrightfree_pixabay.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover
+  background-color: #464646;
+  height: 100vh;
+		}
+		
+		.card{
+ margin-top: 200px;
+
+}
+
+.nav_header{
+}
+
+.nav-lists a{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.nav-lists a: hover{
+  background-color: blue;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+
+.card h5{
+text-align: center;
+  margin: 20px 0 15px 0;
+  line-height: 1.1;
+  word-spacing: 4px;
+}
+
+.card h6{
+text-align: center;
+  margin: 20px 0 15px 0;
+  line-height: 1.1;
+  word-spacing: 4px;
+}
+
+.card:hover{
+box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+transform: translateY(-20px);
+}
+
+ .navbar-light .navbar-nav .nav-link {
+    display: inline;
+    text-transform: uppercase;
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+    font-family:"open-sans";
+    transition: 0.3s ease;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    margin: 0 20px;
+    padding: 20px 0;
+
+}
+
+ .navbar-nav .nav-link.active,
+ .navbar-nav .nav-link:hover {
+    background:#11ADE8;
+    padding: 6px 0;
+
+}
+
+
+	</style>
+
+<!-- Header part started  -->
+<div style="text-align: center;background-color: #F3F3F3;padding: 2px;">
+<h2 style="padding: 10px; text-transform: uppercase;">Covid-19 Worldwide Data</h2>
+</div>
+<!-- Nav bar started -->
+<div class="nav_header">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Covid-19</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="nav-lists navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html" >Overview<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="countrywise.html">Countrywise Data</a>
+      </li>
+     <li class="nav-item">
+        <a class="nav-link" href="datewise.html">DateWise Data</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="datavisualization.html">Data Visualizations</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="extra-div">
+	<div class="container">
+  	<div class="row">
+
+  		<div class="col-lg-4 col-md-4 col-12" >
+  			<div class="card" style="margin-bottom: 15px;margin-left: 10px;margin-right: 10px; border-top-color: yellow;border-top-width: 8px;">
+            <div class="card1 card-body" >
+		    <h5 class="card-title">Confirmed Cases</h5><hr><br>
+		    <div id="confirmedCases"></div><br> 
+  </div>
+  </div >
+  </div>
+ 
+  		
+  		<div class="col-lg-4 col-md-4 col-12">
+  			<div class="card" style="margin-bottom: 15px;margin-left: 10px;margin-right: 10px; border-top-color: green;border-top-width: 8px;">
+            <div class="card1 card-body">
+		    <h5 class=" card-title">Recovered Cases</h5><hr><br>
+		   <div id="recoveredCases"></div><br> 
+  </div>
+  </div >
+  </div>
+  	
+  	
+  		<div class="col-lg-4 col-md-4 col-12">
+  			<div class="card" style="margin-bottom: 15px;margin-left: 10px;margin-right: 10px; border-top-color: red;border-top-width: 8px;">
+            <div class="card1 card-body">
+		    <h5 class=" card-title">Death Cases</h5><hr><br>
+		   <div id="deathCases"></div><br> 
+
+  </div>
+  </div >
+  </div>
+   <img id="affectedImg" src="" alt=""/> 
+  	</div>
+  </div>
+
+</section>
+
+</div>
+<!-- Nav bar ended -->
+<!-- Header part ended  -->
+  
+<!-- Footer design started -->
+<footer class="page-footer font-small blue pt-4">
+  <div class="container-fluid text-center text-md-left bg-info">
+    <div class="row">
+<span></span><br><br>
+    </div>
+  </div>
+  <div class="footer-copyright text-center py-3" style="background-color: white;">Made By
+    <a href="https://github.com/AnkitSharmaOnGithub/covid19"> Ankit Sharma</a>
+  </div>
+</footer>
+
+<!-- Footer design ended -->
+    
+
+
+
+
+
+
+
+
+	  	        <script src="script-min.js"></script> <script>document.addEventListener("DOMContentLoaded", ()=>{fetchApiData();}); function fetchApiData(){fetch(apiUrl) .then(response=> response.json()) .then(data=>{response=data; setData();}) .catch(err=> console.log(err));}function setData(){setImage(); setCases();}function setCases(){var confirmedNumber=response["confirmed"]["value"]; var recoveredNumber=response["recovered"]["value"]; var deathNumber=response["deaths"]["value"]; confirmed.textContent=confirmedNumber; recovered.textContent=recoveredNumber; deaths.textContent=deathNumber;}function setImage(){console.log(response); affectedImage.src=response["image"];}</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	  	    </body></html>

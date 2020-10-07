@@ -14,6 +14,14 @@ body {
   color: #000;
 }
 
+
+
+.head {
+  overflow: hidden;
+  background-color: #F3F3F3;
+  padding: 10px 10px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -88,7 +96,7 @@ header .toggler>span:nth-child(3){
 
 header.header > ul {
   list-style: none;
-  /* padding: 1rem 2rem; */
+
   width: 100%;
 
   display: flex;
@@ -123,6 +131,7 @@ header.header > ul > li > a {
 #deathCases {
   font-size: 1.2rem;
   font-weight: 700;
+  text-align: center;
 }
 
 #confirmedCases {
@@ -210,4 +219,5 @@ header.header > ul > li > a {
   header.header > ul {
     display: flex;
   }
+ 
 }
