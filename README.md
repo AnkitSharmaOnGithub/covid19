@@ -4,7 +4,7 @@
 
 ## How to start :- 
 
-1) Fork and start this repository. Click on watch to get notified about updates on this repo.
+1) Fork and star this repository. Click on watch to get notified about updates on this repo.
 2) Go to issues and check if you can resolve any of the already exisisting issue.
 3) If you find some issue, then create a new issue using the Issues tab.
 4) Make necessay changes in your forked repo.
